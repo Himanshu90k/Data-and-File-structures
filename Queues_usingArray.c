@@ -27,9 +27,9 @@ void Dequeue() {
         printf("Queue is empty: \n");
         return;
     }
-    else if(front > rear) {
-        printf("Queue underflow: \n");
-        return;
+    else if(front == rear) {
+        front = -1;
+        rear = -1;
     }
     else {
         front++;
@@ -62,6 +62,13 @@ int main() {
     Print();
     Enqueue(4);
     printf("Top of Queue: %d \n",Top());
+    Enqueue(5);
+    Enqueue(6);
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Dequeue();
+    Enqueue(7);
     Print();
-    
 }
